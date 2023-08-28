@@ -1,0 +1,13 @@
+<launch>
+  <arg name="launch_roswww" default="true" />
+  <include file="$(find rwt_plot)/launch/rwt_plot.launch"
+           if="$(arg launch_roswww)" />
+
+  <node pkg="rwt_plot" type="random_float.py" name="$(anon random_float)">
+  </node>
+  <node pkg="rwt_plot" type="random_point.py" name="$(anon random_point)">
+  </node>
+  <node pkg="rwt_plot" type="sin.py" name="$(anon sin)"></node>
+  <node pkg="rwt_plot" type="cos.py" name="$(anon cos)"></node>
+  <node pkg="rwt_plot" type="array.py" name="$(anon array)"></node>
+</launch>
